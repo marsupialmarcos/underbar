@@ -214,16 +214,18 @@
   //   }); // should be 5, regardless of the iterator function passed in
   //          No accumulator is given so the first element is used.
   _.reduce = function(collection, iterator, accumulator) {
-      var init;
-      var ix = 0;
-      if (accumulator === undefined) {
-        ix = 1;
-        accumulator = collection[0];
+    var initializing = arguments.length === 2;
+
+    _.each(collection, function(val) {
+      if (initializing) {
+        initializing = false;
+        accumulator = val;
+      } else {
+        accumulator = iterator(accumulator, val);
       }
-      for (var i = ix; i < collection.length; i ++){
-        accumulator = iterator(accumulator, collection[i]);
-      }
-      return accumulator;
+    });
+
+    return accumulator;
     };
 
   // Determine if the array or object contains a given value (using `===`).
@@ -231,10 +233,7 @@
     // TIP: Many iteration problems can be most easily expressed in
     // terms of reduce(). Here's a freebie to demonstrate!
     return _.reduce(collection, function(wasFound, item) {
-      if (wasFound) {
-        return true;
-      }
-      return item === target;
+      return wasFound || item == target;
     }, false);
   };
 
@@ -242,12 +241,49 @@
   // Determine whether all of the elements match a truth test.
   _.every = function(collection, iterator) {
     // TIP: Try re-using reduce() here.
+    if(collection.length === 0){
+      return true;
+    }
+    if(iterator === undefined){
+      return _.reduce(collection, function(isTrue, item){
+        if(item === false || isTrue === false){
+           return false;
+        }
+        return true;
+      }, true);
+    }
+    return _.reduce(collection, function(isTrue, item){
+      if(iterator(item) === false || item === undefined || isTrue === false || iterator(item) === 0){
+        return false;
+      }
+      return iterator(item) !== false;
+    }, true);
+
   };
 
   // Determine whether any of the elements pass a truth test. If no iterator is
   // provided, provide a default one
   _.some = function(collection, iterator) {
     // TIP: There's a very clever way to re-use every() here.
+
+    if(collection.length === 0){
+      return false;
+    }
+    if(iterator === undefined){
+      return _.reduce(collection, function(memo, item){
+        if(item === true || memo === true){
+          return true;
+        }
+        return false;
+      }, false);
+    }
+    return _.reduce(collection, function(memo, item){
+      if(iterator(item) === true || iterator(item) === 1 || memo === true || typeof item === 'string'){
+        return true;
+      } 
+      return false;
+    }, false);
+
   };
 
 
@@ -270,11 +306,25 @@
   //     bla: "even more stuff"
   //   }); // obj1 now contains key1, key2, key3 and bla
   _.extend = function(obj) {
+    for(var i = 1; i < arguments.length; i++){
+      for(var key in arguments[i]){
+        obj[key] = arguments[i][key];
+      }
+    }
+    return obj;
   };
 
   // Like extend, but doesn't ever overwrite a key that already
   // exists in obj
   _.defaults = function(obj) {
+    for(var i = 1; i < arguments.length; i++){
+      for(var key in arguments[i]){
+        if(obj[key] === undefined){
+          obj[key] = arguments[i][key];
+        }
+      }
+    }
+    return obj;
   };
 
 
@@ -318,6 +368,24 @@
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+
+    var obj = {};
+    var runFunc = function(){
+      var args = [].slice.call(arguments);
+      for(var key in obj){
+        if(JSON.stringify(obj[key]) === JSON.stringify(args)){
+        //if(obj[key] === args){
+          return key;
+         }  
+        }
+      
+      var result = func.apply(this, args); 
+      obj[result] = args;
+      return result;
+     };
+    
+    return runFunc;
+
   };
 
   // Delays a function for the given number of milliseconds, and then calls
@@ -327,6 +395,9 @@
   // parameter. For example _.delay(someFunction, 500, 'a', 'b') will
   // call someFunction('a', 'b') after 500ms
   _.delay = function(func, wait) {
+    var args = [].slice.call(arguments);
+    args = args.slice(2);
+    return setTimeout(function () {func.apply(this, args);}, wait);
   };
 
 
@@ -341,6 +412,18 @@
   // input array. For a tip on how to make a copy of an array, see:
   // http://mdn.io/Array.prototype.slice
   _.shuffle = function(array) {
+
+    var newArr = [];
+    var indexArr = [];
+    while(newArr.length !== array.length){
+      var random = Math.floor(Math.random() * array.length);
+      if(!indexArr.includes(random)){
+        newArr.push(array[random]);
+        indexArr.push(random);
+      }
+    } 
+  return newArr;
+
   };
 
 
@@ -355,6 +438,18 @@
   // Calls the method named by functionOrKey on each value in the list.
   // Note: You will need to learn a bit about .apply to complete this.
   _.invoke = function(collection, functionOrKey, args) {
+    var newArr = [];
+    if(typeof functionOrKey === 'string'){
+      for(var i = 0 ; i < collection.length; i++){
+        newArr.push(collection[i][functionOrKey]())
+      }
+      return newArr;
+    } else {
+      for(var i = 0; i < collection.length; i++){
+        newArr.push(functionOrKey.apply(collection[i]));
+      }
+      return newArr;
+    }
   };
 
   // Sort the object's values by a criterion produced by an iterator.

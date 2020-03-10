@@ -1,4 +1,4 @@
-###### underbar
+#### underbar
 This is a project I completed as a student at [hackreactor](http://hackreactor.com). This project was worked on with a pair.
 
 # UNDERBAR REVIEW
@@ -61,13 +61,21 @@ reduce
 
 # PART II:
 contains
+
 every
+
 some
+
 extend
+
 defaults
+
 once
+
 memoize
+
 delay
+
 shuffle
 
 Note: JavaScript provides some built-in Array functions--including forEach, map, reduce and filter--that replicate the functionality of some of the functions you will implement. Don't use them to implement your functions.
@@ -79,11 +87,17 @@ Use checkForNativeMethods to write a test for each function that will fail if a 
 Implement the following functions:
 
 invoke
+
 sortBy
+
 zip
+
 flatten
+
 intersection
+
 difference
+
 throttle
 
 Throttle

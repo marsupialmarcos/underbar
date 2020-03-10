@@ -19,7 +19,7 @@ curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/instal
 
 Pomander uses a pre-commit hook to run staged files through eslint before each commit. eslint is a linter that will block your commit should you have any syntax errors, or, should you violate the Hack Reactor style guide. There are some preferred whitespace style rules that will give warnings but not block your commit. If the linter gives you any funny bugs, these bugs are not intentional, and you should feel free to skip using it during commits with the --no-verify option.
 
-### BROKEN TESTS
+#### BROKEN TESTS
 To help you familiarize yourself with our favorite testing tools, Mocha and Chai, we've broken the test suite.
 
 Mocha is a test framework that provides the structure for test files, and is responsible for running tests and reporting their results. Mocha provides the it and describe global variables along with useful hooks like beforeEach.
@@ -28,7 +28,7 @@ Chai is an assertion library that makes your tests more expressive and your erro
 
 Pay careful attention to the test files and fix them as necessary. Do not to refer back to the previous test suite, you would only be cheating yourself out of an important learning opportunity. Instead, use the Mocha and Chai documentation. You can do it!
 
-NO MORE NOTES
+#### NO MORE NOTES
 
 For your convenience, the "Links and Resources" section has been removed. As you continue your journey as a developer, one of the most valuable skills you can build is the ability to efficiently look up what you don't understand. Practice this skill every chance you get.
 

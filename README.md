@@ -8,7 +8,7 @@ This project was written in the same spirit as [JavaScript Koans](https://github
 #  REVIEW SPRINT REPO
 The repo you will be working out of will be a different repo from Precourse. Look on Github for underbar-review instead of underbar. Work on this from scratch and do not reference code from Precourse.
 
-###### POMANDER
+#### POMANDER
 To ensure your work is of the highest quality, we've created Pomander, a tool that checks your code for syntax errors and violations against the style guide before each commit.
 
 Install it by navigating to this repository in Terminal and running the following command:
@@ -19,7 +19,7 @@ curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/instal
 
 Pomander uses a pre-commit hook to run staged files through eslint before each commit. eslint is a linter that will block your commit should you have any syntax errors, or, should you violate the Hack Reactor style guide. There are some preferred whitespace style rules that will give warnings but not block your commit. If the linter gives you any funny bugs, these bugs are not intentional, and you should feel free to skip using it during commits with the --no-verify option.
 
-# BROKEN TESTS
+### BROKEN TESTS
 To help you familiarize yourself with our favorite testing tools, Mocha and Chai, we've broken the test suite.
 
 Mocha is a test framework that provides the structure for test files, and is responsible for running tests and reporting their results. Mocha provides the it and describe global variables along with useful hooks like beforeEach.

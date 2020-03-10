@@ -13,7 +13,9 @@ To ensure your work is of the highest quality, we've created Pomander, a tool th
 
 Install it by navigating to this repository in Terminal and running the following command:
  
+```javascript
 curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash
+```
 
 Pomander uses a pre-commit hook to run staged files through eslint before each commit. eslint is a linter that will block your commit should you have any syntax errors, or, should you violate the Hack Reactor style guide. There are some preferred whitespace style rules that will give warnings but not block your commit. If the linter gives you any funny bugs, these bugs are not intentional, and you should feel free to skip using it during commits with the --no-verify option.
 
@@ -27,6 +29,7 @@ Chai is an assertion library that makes your tests more expressive and your erro
 Pay careful attention to the test files and fix them as necessary. Do not to refer back to the previous test suite, you would only be cheating yourself out of an important learning opportunity. Instead, use the Mocha and Chai documentation. You can do it!
 
 NO MORE NOTES
+
 For your convenience, the "Links and Resources" section has been removed. As you continue your journey as a developer, one of the most valuable skills you can build is the ability to efficiently look up what you don't understand. Practice this skill every chance you get.
 
 # BARE MINIMUM REQUIREMENTS
@@ -100,8 +103,6 @@ difference
 
 throttle
 
-Throttle
-
 There's one function that is a little more complicated, so we've included some more context to help you along.
 
 ```javascript
@@ -117,11 +118,9 @@ var increment = function() {
 var throttledIncrement = _.throttle(increment, 100);
 
 throttledIncrement(); // return 1; `counter` should now be 1
-```
 
-Arguments passed to the throttled function should be passed to the original function.
-The throttled function should always return the most recently returned value of the original function.
-If the wait period is 100ms and the function was last called 30ms ago, another call to the throttled function should schedule a call for 0ms after the wait period is over.
+Arguments passed to the throttled function should be passed to the original function. The throttled function should always return the most recently returned value of the original function. If the wait period is 100ms and the function was last called 30ms ago, another call to the throttled function should schedule a call for 0ms after the wait period is over.
+```
 
 # NIGHTMARE MODE
 

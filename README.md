@@ -3,7 +3,7 @@ This is a project I completed as a student at [hackreactor](http://hackreactor.c
 
 # UNDERBAR REVIEW
 
-This project was written in the same spirit as JavaScript Koans, and thusly uses the Mocha Test Suite to facilitate a TDD approach to learning. It walks you through a reimplementation of underscore.js, a popular collection of useful functions authored by Jeremy Ashkenas.
+This project was written in the same spirit as [JavaScript Koans](https://github.com/mrdavidlaing/javascript-koans), and thusly uses the Mocha Test Suite to facilitate a TDD approach to learning. It walks you through a reimplementation of underscore.js, a popular collection of useful functions authored by Jeremy Ashkenas.
 
 #  REVIEW SPRINT REPO
 The repo you will be working out of will be a different repo from Precourse. Look on Github for underbar-review instead of underbar. Work on this from scratch and do not reference code from Precourse.

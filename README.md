@@ -104,6 +104,7 @@ Throttle
 
 There's one function that is a little more complicated, so we've included some more context to help you along.
 
+```javascript
 _.throttle(func, wait): Wrap a function func so that it can be called at most once within a period of wait milliseconds. This is useful for throttling access to expensive APIs or to drawing routines in a video game. Let's see how it's used:
 
 var counter = 0;
@@ -116,6 +117,7 @@ var increment = function() {
 var throttledIncrement = _.throttle(increment, 100);
 
 throttledIncrement(); // return 1; `counter` should now be 1
+```
 
 Arguments passed to the throttled function should be passed to the original function.
 The throttled function should always return the most recently returned value of the original function.

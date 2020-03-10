@@ -1,4 +1,4 @@
-# underbar
+###### underbar
 This is a project I completed as a student at [hackreactor](http://hackreactor.com). This project was worked on with a pair.
 
 # UNDERBAR REVIEW
@@ -37,17 +37,27 @@ The files in the spec directory contain the test suites. Your goal is to fix any
 The file src/underbar.js contains function definitions and explanations for the following functions (italicized functions are solved for you but contain broken tests). Implement each of the functions:
 
 # PART I:
-⋅⋅* identity
-⋅⋅* first
-⋅⋅* last
-⋅⋅* each
-⋅⋅* indexOf
-⋅⋅* filter
-⋅⋅* reject
-⋅⋅* uniq
-⋅⋅* map
-⋅⋅* pluck
-⋅⋅* reduce
+identity
+
+first
+
+last
+
+each
+
+indexOf
+
+filter
+
+reject
+
+uniq
+
+map
+
+pluck
+
+reduce
 
 # PART II:
 contains

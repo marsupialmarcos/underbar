@@ -8,7 +8,7 @@ This project was written in the same spirit as [JavaScript Koans](https://github
 #  REVIEW SPRINT REPO
 The repo you will be working out of will be a different repo from Precourse. Look on Github for underbar-review instead of underbar. Work on this from scratch and do not reference code from Precourse.
 
-# POMANDER
+###### POMANDER
 To ensure your work is of the highest quality, we've created Pomander, a tool that checks your code for syntax errors and violations against the style guide before each commit.
 
 Install it by navigating to this repository in Terminal and running the following command:

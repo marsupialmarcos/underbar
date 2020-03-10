@@ -133,7 +133,7 @@ You can play around with ES6 in the latest version of Chrome.
 
 Visit chrome://help in Chrome and ensure that you are using version 49 or above. Once you're up to date with the latest version, Chrome will accept and run many new ES6 features, allowing you to attempt the refactor described next.
 
-Refactor with ES6 Arrow Functions and Rest parameters
+###### Refactor with ES6 Arrow Functions and Rest parameters
 
 ES6 introduces a slick new feature called arrow function expressions that provide syntactic sugar to make anonymous higher order functions (such as those you have been building out during this Underbar sprint) much more concise. Arrow function expressions also provide lexical scoping to the this value.
 
